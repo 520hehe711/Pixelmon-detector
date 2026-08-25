@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.gradle.userdev' version '7.0.153'
+}
+
+group = 'com.lileep'
+version = '1.21.1-9.4.0'
+
+base {
+    archivesName = 'PixelmonDetector'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.neoforged.net/releases' }
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation "net.neoforged:neoforge:${neo_version}"
+    implementation files('libs/Pixelmon-1.21.1-9.4.0.jar')
+}
+
+processResources {
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand project.properties
+    }
+}
