@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[21,)"
+
+license="MIT"
+issueTrackerURL="https://github.com/Lileep/PixelmonDetector/issues"
+
+[[mods]]
+modId="pixelmondetector"
+version="${version}"
+displayName="Pixelmon Detector"
+description="Detect nearby Pixelmon."
+
+[[dependencies.pixelmondetector]]
+modId="pixelmon"
+mandatory=true
+versionRange="[9.4.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.pixelmondetector]]
+modId="neoforge"
+mandatory=true
+versionRange="[21.1.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.pixelmondetector]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.21.1]"
+ordering="NONE"
+side="BOTH"
