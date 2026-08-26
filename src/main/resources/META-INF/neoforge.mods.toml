@@ -6,7 +6,7 @@ issueTrackerURL="https://github.com/Lileep/PixelmonDetector/issues"
 
 [[mods]]
 modId="pixelmondetector"
-version="${version}"
+version="1.21.1-9.4.0"
 displayName="Pixelmon Detector"
 description="Detect nearby Pixelmon."
 
