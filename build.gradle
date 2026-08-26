@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.gradle.userdev' version '7.0.153'
+}
+
+group = 'com.lileep'
+version = '1.21.1-9.4.0'
+
+base {
+    archivesName = 'PixelmonDetector'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.neoforged.net/releases' }
+}
+
+dependencies {
+    implementation "net.neoforged:neoforge:${neo_version}"
+    implementation files('libs/Pixelmon-1.21.1-9.4.0-universal.jar')
+}
+
+task downloadPixelmon(type: Exec) {
+    doFirst {
+        file('libs').mkdirs()
+    }
+    commandLine 'curl', '-L', '-o', 'libs/Pixelmon-1.21.1-9.4.0-universal.jar', 'https://github.com/520hehe711/Pixelmon-detector/releases/download/v1.0.0v2.3.4/Pixelmon-1.21.1-9.4.0-universal.jar'
+}
+
+compileJava.dependsOn downloadPixelmon
