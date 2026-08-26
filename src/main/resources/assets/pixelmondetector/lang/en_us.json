@@ -1,0 +1,5 @@
+{
+  "item.pixelmondetector.detector": "Pixelmon Detector",
+  "message.pixelmondetector.none": "No Pixelmon found nearby.",
+  "message.pixelmondetector.found": "Found %s Pixelmon nearby."
+}
